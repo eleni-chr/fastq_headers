@@ -4,7 +4,7 @@ function fastq_headers
 %This function checks if there are entries with identical Headers in a FASTQ
 %file. Headers in FASTQ files should (theoretically) be unique.
 
-%NOTE: The function "fastq_analysis" must be run beforehand, in order to
+%NOTE: The function "fastq_analysis" must be ran beforehand, in order to
 %generate the appropriate variables to be used in the current function.
 
 %Run this function from inside the folder containing the subfolders with
@@ -12,19 +12,12 @@ function fastq_headers
 
 %INPUT ARGUMENTS: None.
 
-%OUTPUT ARGUMENTS: None, but the following variables are appended to the 
+%OUTPUT ARGUMENTS: None, but the following variable is appended to the 
 %"fastq_analysis.mat" file:
-%(1)dup_fastq_headers:    A 1 x N cell array, where N is the number of 
-%                         non-unique Headers in the FASTQ file. Each 
-%                         element in the array represents the value of a 
-%                         non-unique Header.
-%(2)summary:              An M x 1 cell array, where M is the number of
-%                         Headers that appear more than once in the FASTQ
-%                         file. Each element of the cell array is a
-%                         character array summarising how many Headers
-%                         appear how many times they appear in the FASTQ 
-%                         file.
-
+%dup_fastq_headers:    A 1 x N cell array, where N is the number of 
+%                      non-unique Headers in the FASTQ file. Each 
+%                      element in the array represents the value of a 
+%                      non-unique Header.
 %%
 %Find MAT files to work with.
 D=dir('*/fastq_analysis.mat'); %get list of MAT files in subfolders.
